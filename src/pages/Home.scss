@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // overflow-x: hidden;
+}
+section{
+    margin: 40px 0;
+}
+
+#aboutdmcyber{
+  padding: 100px 0;
+}
+
+a{
+    text-decoration: none!important;transition: 600ms;;
+    &:hover{text-decoration: none!important;color:#02ADEF!important;transition: 600ms;background-color: #171717!important;}
+}
+
+button{
+    transition: 600ms;
+    border: 0;
+}
+ul{
+    padding: 0 15px;
+}
+li{
+    font-size: 16px;
+    padding: 2px 0;
+    font-family: 'Jost*', sans-serif;
+}
+
+label{
+    color: #02ADEF;
+    font-weight: bold;
+    font-size: 22px;
+}
+input{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10%;
+    border: none;
+    outline: 0;
+    margin-bottom: 10px!important;
+}
+
+input::placeholder{
+    color: #171717;
+    font-size: 14px;
+}
+textarea{
+    width: 100%;
+    height: 200px;
+    padding: 10%;
+    border: none;
+    outline: 0;
+    margin-bottom: 20px!important;
+}
+textarea::placeholder{
+    color: #171717;
+    font-size: 14px;
+}
+.cyberInputs{
+    display: flex;
+    justify-content: space-between;
+
+}
+.LiquidCrystal .col-md-6{
+    padding: 0!important;
+    height: auto!important;
+}
+.cyberimage{
+    width: 400px;
+    object-fit: contain;
+    animation: beat 3s infinite alternate;  
+}
+.CardImage{
+    object-fit: contain;
+    width: 70px;
+}
+.CyberSolutions a{
+   display: flex;
+   justify-content: flex-end;
+   font-size: 8px;
+   letter-spacing: 12%;
+   color: #171717;
+   padding: 30px;
+}
+#aboutp{
+    padding-right: 50%!important;
+}
+// @keyframes swing {
+//     0% { transform: rotate(3deg); }
+//     100% { transform: rotate(-3deg); }
+// }
+
+.aboutcyber{
+    width: 100%;
+    object-fit: contain;
+    position: relative;
+    right: 17%;
+    // animation: swing ease-in-out 1s infinite alternate;
+    // transform-origin: center -20px;
+}
+
+
+.aboutcard{
+    // background: #5A5A5A;
+    padding:30px 15px;
+    border-radius: 5px;
+    background: rgb(50,51,53);
+    background: linear-gradient(90deg, rgba(50,51,53,1) 0%, rgba(23,23,23,1) 50%, rgba(50,51,53,1) 100%);
+
+}
+#cyberform{
+    margin: 80px 0;
+}
+
+.cybercontact{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+
+.cybercontact img{
+    width: 25px;
+    height: 30px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+.cybercontact1{
+    width: 80px!important;
+    height: 40px!important;
+ }
+.cybercontact p{
+    padding: 0!important;
+    margin: 0!important;
+}
+
+.cybercontact:hover >img{
+    transition: 900ms;
+    -webkit-filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(-180deg) saturate(700%) contrast(0.8);
+    filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(-180deg) saturate(700%) contrast(0.8);
+}
+
+
+#contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-left:15% ;
+}
+
+.cybersolutionimg{
+    position: absolute;
+    right: -100px;
+    height: 100%;
+    top: -32%;
+}
+.cybersolutionimg2{
+    position: absolute;
+    height: 100%;
+    top: 63%;
+    right: 60%;
+}
+.footerlogo{
+    width: 50%;
+    object-fit: contain;
+}
+#footer{
+    text-align: center;
+}
+
+
+@media (max-width: 575px) {
+    .Cyber1{
+        order:2!important
+    }
+    .Cyber2{
+        order:1!important
+    }
+    section{
+        margin: 20px 0;
+    }
+    #aboutdmcyber{
+        padding: 20px 0;
+      }
+      #aboutp{
+        padding-right: 0%!important;
+    }
+    #cybercards{
+        margin: 15px 0;
+    }
+    #cyberform{
+        margin: 30px 0;
+    }
+    .cyberInputs{
+        flex-direction: column;    
+    }
+    label{
+        font-size: 20px;
+    }
+    #contact{
+        padding-left:5% ;
+    }
+    .cybersolutionimg{
+        display: none;
+    }
+    .cybercontact1{
+        width: 100%!important;
+     }
+     .footerlogo{
+        width: 100%;
+        margin-top: 50px;
+    }
+   
+}
+
+
+// Small devices (landscape phones, 576px and up 767)
+@media (min-width: 568px) and (max-width: 767px) {
+    section{
+        margin: 30px 0;
+    }
+    
+}
+
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) {
+    #aboutp{
+        padding-right: 20%!important;
+    }
+    .cyberimage{
+        width: 300px;
+    }
+    li{
+        font-size: 10px;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) {
+    #aboutp{
+        padding-right: 20%!important;
+    }
+}
+
+
+// @keyframes beat{
+// 	10% { transform: scale(1.1); }
+// }

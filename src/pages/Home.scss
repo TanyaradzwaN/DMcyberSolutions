@@ -21,9 +21,7 @@ button{
     transition: 600ms;
     border: 0;
 }
-ul{
-    padding: 0 15px;
-}
+
 li{
     font-size: 16px;
     padding: 2px 0;
@@ -179,11 +177,11 @@ textarea::placeholder{
 
 
 @media (max-width: 575px) {
-    .Cyber1{
-        order:2!important
+    #Cyber1{
+        order:2
     }
-    .Cyber2{
-        order:1!important
+    #Cyber2{
+        order:1
     }
     section{
         margin: 20px 0;
@@ -219,7 +217,6 @@ textarea::placeholder{
         width: 100%;
         margin-top: 50px;
     }
-   
 }
 
 

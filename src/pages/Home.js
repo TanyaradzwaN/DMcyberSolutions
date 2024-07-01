@@ -205,7 +205,7 @@ const CyberFlexicon = styled.div`
 
 function Home1() {
   return <>
-    <Col md={7} id='Cyber1' className='Cyber1'>
+    <Col md={7} className="backgroungBlack" id='Cyber1' >
       <section>
           <CyberHeading>
             Unlock Your Cybersecurity Potential with <DmCyber>DMcyber Solutions</DmCyber>  Accessible Learning for Everyone.
@@ -222,7 +222,7 @@ function Home1() {
 
 function Home2 (){
   return<>
-        <Col md={5} id="Cyber2" className='Cyber2'>
+        <Col md={5} id="Cyber2">
           <section>
             <CyberFlex>
               <img src="../images/cyber.png" alt="cyber solutions" className='cyberimage'/>

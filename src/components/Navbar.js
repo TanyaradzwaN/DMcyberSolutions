@@ -41,12 +41,9 @@ const NavIcon = styled.div`
 display: flex;
 margin-left: auto;
 padding-right: 50px;
-display: none;
 
 @media (max-width: 575px) {
     padding-right: 15px;
-    display: flex;
- 
 }
 @media (min-width: 568px) and (max-width: 767px) {
     padding-right: 10px;
@@ -79,7 +76,7 @@ const showSidebar = () => setSidebar(!sidebar)
 
             </NavItems>
             </NavLogoContent>
-            <NavIcon className='d-none d-sm-none '>
+            <NavIcon className='d-block d-sm-none '>
                 <Link to="#" className="menu-bars">
                     <FaIcons.FaBars onClick={showSidebar}/>
                 </Link>

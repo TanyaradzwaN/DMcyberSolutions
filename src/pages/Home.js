@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 // import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Container, Row, Col,} from "react-bootstrap"
 import './Home.scss'
 import Swal from 'sweetalert2'
-
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const CyberHeading = styled.h1`
 font-weight:bold;
@@ -30,7 +31,6 @@ line-height: 35px;
 }
 
 `
-
 const CyberLink = styled.a`
     background-color:#02ADEF;
     width: 250px;
@@ -59,8 +59,6 @@ const CyberLink = styled.a`
 
 }
 `;
-
-
 const CyberLinkbutton = styled.button`
     background-color:#02ADEF;
     width: 250px;
@@ -85,15 +83,12 @@ const CyberLinkbutton = styled.button`
 
 `;
 
-
-
 const DMcyberContainer = styled.div`
 padding: 0 60px ;
 @media (max-width: 575px) {
   padding: 0 15px;
 }
 `
-
 const DmCyber = styled.span`
 color:#3ED5DD;`
 
@@ -144,7 +139,6 @@ const CyberFlex = styled.div`
 
 }
 `
-
 const CardContent = styled.div`
   color: white;
  
@@ -201,12 +195,40 @@ const CyberFlexicon = styled.div`
 
 }
 `
+gsap.registerPlugin(ScrollTrigger);
 
+const useAnimateSection = (ref) => {
+  useEffect(() => {
+    const section = ref.current;
+    
+    gsap.fromTo(
+      section.children,
+      { 
+        opacity: 0, 
+        y: 100 
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play reverse play reverse",
+        }
+      }
+    );
+  }, [ref]);
+};
 
 function Home1() {
+  const section1Ref = useRef(null);
+  useAnimateSection(section1Ref);
   return <>
-    <Col md={7} className="backgroungBlack" id='Cyber1' >
-      <section>
+    <Col md={7} id='Cyber1' >
+      <section className="tl" ref={section1Ref} >
           <CyberHeading>
             Unlock Your Cybersecurity Potential with <DmCyber>DMcyber Solutions</DmCyber>  Accessible Learning for Everyone.
           </CyberHeading>
@@ -221,9 +243,11 @@ function Home1() {
 }
 
 function Home2 (){
+  const section2Ref = useRef(null);
+  useAnimateSection(section2Ref);
   return<>
         <Col md={5} id="Cyber2">
-          <section>
+          <section ref={section2Ref}>
             <CyberFlex>
               <img src="../images/cyber.png" alt="cyber solutions" className='cyberimage'/>
             </CyberFlex>
@@ -232,9 +256,11 @@ function Home2 (){
 }
 
 function Home3() {
+  const section3Ref = useRef(null);
+  useAnimateSection(section3Ref);
   return <>
       <Col md={6}>
-        <section>
+        <section ref={section3Ref}>
           <img src="../images/about.png" alt="cyber solutions" className='aboutcyber'/>
         </section>
       </Col>
@@ -242,10 +268,11 @@ function Home3() {
 }
 
 function Home4 (){
+  const section4Ref = useRef(null);
+  useAnimateSection(section4Ref);
   return<>
-  
         <Col md={6} >
-          <section id='aboutdmcyber'>
+          <section id='aboutdmcyber' ref={section4Ref}>
             <DmCyberSpan>ABOUT US</DmCyberSpan>
               <CyberHeading>
                 Empowering You to Secure the Digital World: <DmCyber>One Skill at a Time</DmCyber> 
@@ -261,9 +288,11 @@ function Home4 (){
 }
 
 function Home5() {
+  const section5Ref = useRef(null);
+  useAnimateSection(section5Ref);
   return <>
         <Col md={8} >
-          <section >
+          <section ref={section5Ref}>
             <DmCyberSpan>FEATURE POINT</DmCyberSpan>
               <CyberHeading>
                  Our Services
@@ -276,6 +305,7 @@ function Home5() {
 }
 
 function Home6 (){
+
   const itemList = [
     {
       imageUrl: "../images/Customize.png",
@@ -288,10 +318,13 @@ function Home6 (){
       topic4: "Malware",
     },
   ]
+
+  const section6Ref = useRef(null);
+  useAnimateSection(section6Ref);
   return(
   
         <Col md={4} >
-          <section >
+          <section ref={section6Ref}>
           {itemList.map(({ imageUrl, altText, topic, description,topic1,topic2,topic3,topic4  }, i) => (
            <div className='aboutcard' key={i}>
               <img src={imageUrl} alt={altText} className="CardImage" />
@@ -344,9 +377,11 @@ function Home7 (){
       topic4: "Insurance and Regulatory Compliance",
     },
   ]
+  const section7Ref = useRef(null);
+  useAnimateSection(section7Ref);
   return<>
         {itemList.map(({ imageUrl, altText, topic, description,topic1,topic2,topic3,topic4  }, i) => (
-        <Col md={4} id="cybercards">
+        <Col md={4} id="cybercards" ref={section7Ref}>
            <div className='aboutcard' key={i}>
               <img src={imageUrl} alt={altText} className="CardImage" />
               <CardContent className="CardContent">
@@ -364,9 +399,6 @@ function Home7 (){
          
         </Col>
         ))}
-       
-        
-        
   </>
 }
 
@@ -402,11 +434,11 @@ function Home8(){
     }
   };
 
-  
-
+  const section8Ref = useRef(null);
+  useAnimateSection(section8Ref);
 return(
   <Col md={6} id='cyberform' >
-    <section>
+    <section ref={section8Ref}>
      <CyberHeading>Get In Touch</CyberHeading> 
       <form onSubmit={onSubmit}>
         <div className='cyberInputs'>
@@ -437,9 +469,11 @@ return(
 )}
 
 function Home9() {
+  const section9Ref = useRef(null);
+  useAnimateSection(section9Ref);
   return <>
         <Col md={6} >
-          <section id='contact'>
+          <section id='contact' ref={section9Ref}>
           <img src="../images/Group5.png" alt="cyber solutions" className='cybersolutionimg' />
               <CyberHeading >
                 Need More help?
@@ -463,9 +497,11 @@ function Home9() {
 }
 
 function Home10() {
+  const section10Ref = useRef(null);
+  useAnimateSection(section10Ref);
   return <>
         <Col md={12} >
-          <section id='footer'>
+          <section id='footer' ref={section10Ref}>
           <img src="../images/cyber1.png" alt="cyber solutions" className='footerlogo'/>
           <CyberFlexicon>
               <a href='tel:+16784916702' className='cybercontact'>
@@ -493,11 +529,12 @@ function Home10() {
 
 
 function Home() {
+
   return (
-    <DMcyberContainer>
+    <DMcyberContainer >
     <Container fluid className="container-fluid LiquidCrystal">
       <Row >
-        <Home1 />
+        <Home1  />
         <Home2/>
       </Row>
       <Row>

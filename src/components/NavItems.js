@@ -1,22 +1,22 @@
 export const NavbarData = [
     {
         title: 'Home',
-        path: '#LearningLibrary',
+        path: '/',
         cName: 'nav-text nav-content'
     },
     {
         title: 'Services',
-        path: '#SocialCommunities',
+        path: '#services',
         cName: 'nav-text nav-content'
     },
     {
         title: 'Training',
-        path: '#Coaching',
+        path: '/Training',
         cName: 'nav-text nav-content'
     },
     {
         title: 'Contact Us',
-        path: '#Coaching',
+        path: '#Footer',
         cName: 'nav-text nav-content'
     },
 ]

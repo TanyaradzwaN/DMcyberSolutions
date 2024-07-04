@@ -7,7 +7,28 @@
     margin-bottom: 0;
     border-radius:0;
     width: 100%;
+    z-index: 9;
+    transition: 600ms;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: 600ms;
 }
+
+
+  
+  .navbar.active {
+    transform: translateY(0);
+    transition: 600ms;
+  }
+  
+  .navbar.hidden {
+    transform: translateY(-100%);
+    transition: 600ms;
+  }
+  
+  /* Add any other styles you need for your navbar here */
 .cyberimagelogo{
     z-index: 8;
     object-fit: contain;
@@ -81,7 +102,9 @@
 .nav-content{
     padding: 0 20px;
 }
-
+#cybercards{
+    margin: 10px 0;
+}
 
 @media (max-width: 575px) {
 .cyberimagelogo{
@@ -98,6 +121,9 @@
 
 .nav-text a{
     font-size: 20px;
+}
+.navbar{
+    height: 100px;
 }
 }
 // Small devices (landscape phones, 576px and up 767)

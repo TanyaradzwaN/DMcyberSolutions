@@ -5,9 +5,9 @@
     // overflow-x: hidden;
 }
 
-// .box{
-//     left: 100px;
-// }
+html {
+    scroll-behavior: smooth;
+  }
 section{
     margin: 40px 0;
 }
@@ -20,7 +20,9 @@ a{
     text-decoration: none!important;transition: 600ms;;
     &:hover{text-decoration: none!important;color:#02ADEF!important;transition: 600ms;background-color: #171717!important;}
 }
-
+.home-6{
+    margin: auto!important;
+}
 button{
     transition: 600ms;
     border: 0;
@@ -161,7 +163,7 @@ textarea::placeholder{
 
 .cybersolutionimg{
     position: absolute;
-    right: -100px;
+    right: -60px;
     height: 100%;
     top: -32%;
 }
@@ -169,7 +171,7 @@ textarea::placeholder{
     position: absolute;
     height: 100%;
     top: 63%;
-    right: 60%;
+    right: 70%;
 }
 .footerlogo{
     width: 50%;
@@ -220,6 +222,9 @@ textarea::placeholder{
      .footerlogo{
         width: 100%;
         margin-top: 50px;
+    }
+    .Cyberimage{
+        width: 100%;
     }
 }
 

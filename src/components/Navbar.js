@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link } from 'react-router-dom';
 import * as FaIcons from "react-icons/fa";
-import {SidebarData} from './NavPages'
 import {NavbarData} from './NavItems'
 import {IconContext} from 'react-icons'
 import './Navbar.scss'
@@ -51,25 +50,59 @@ padding-right: 50px;
 
 `
 
-function Navbar() {
+
+
+const Navbar = () => {
+    const [show, setShow] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+  
+    const controlNavbar = () => {
+      if (typeof window !== 'undefined') { 
+        if (window.scrollY > lastScrollY) { // if scroll down hide the navbar
+          setShow(false); 
+        } else { // if scroll up show the navbar
+          setShow(true);  
+        }
+  
+        // remember current page location to use in the next move
+        setLastScrollY(window.scrollY); 
+      }
+    };
+  
+    useEffect(() => {
+      if (typeof window !== 'undefined') {
+        window.addEventListener('scroll', controlNavbar);
+  
+        // cleanup function
+        return () => {
+          window.removeEventListener('scroll', controlNavbar);
+        };
+      }
+    }, [lastScrollY]);
+
+
+
 
 const [sidebar, setSidebar] = useState(false) 
 const showSidebar = () => setSidebar(!sidebar)
     return (
         <>
         <IconContext.Provider value={{color:'#FFFF'}}>
-        <div className="navbar">
+        <div className={`navbar ${show ? 'active' : 'hidden'}`}>
             <NavLogoContent>
-            <img src={Logo} alt="Liquid Crystal" className="cyberimagelogo" />
-            <img src="../images/Vector.png" alt="cyber solutions" className='cyberimagevector'/>
+                <a href='/'>
+                  <img src={Logo} alt="Liquid Crystal" className="cyberimagelogo" />
+                </a>
+               
+            {/* <img src="../images/Vector.png" alt="cyber solutions" className='cyberimagevector'/> */}
 
             <NavItems>
                 {NavbarData.map((item, i) =>{
                         return(
                             <li key={i} className={item.cName}>
-                                <Link to={item.path}>
+                                <a href={item.path}>
                                     {item.title}
-                                </Link>
+                                </a>
                             </li>
                         )
                     })}
@@ -89,12 +122,12 @@ const showSidebar = () => setSidebar(!sidebar)
                      <FaTimes onClick={showSidebar}/>
                     </Link>
              
-                {SidebarData.map((item, i) =>{
+                {NavbarData.map((item, i) =>{
                     return(
                         <li key={i} className={item.cName}>
-                            <Link to={item.path}>
-                                {item.title}
-                            </Link>
+                            <a href={item.path}>
+                                    {item.title}
+                                </a>
                         </li>
                     )
                 })}

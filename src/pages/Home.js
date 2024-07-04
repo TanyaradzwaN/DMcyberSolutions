@@ -65,9 +65,22 @@ const CyberLink = styled.a`
 const DMcyberContainer = styled.div`
 padding: 0 60px ;
 margin-top: 200px;
+
 @media (max-width: 575px) {
   padding: 0 15px;
+  mask-type: 100px;
+}
+
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) {
   margin-top: 100px;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) {
+  margin-top: 200px;
+   
 }
 `
 const DmCyber = styled.span`

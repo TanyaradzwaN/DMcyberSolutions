@@ -1,264 +1,290 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    // overflow-x: hidden;
 }
 
 html {
     scroll-behavior: smooth;
-  }
-section{
+}
+
+body {
+    font-family: 'Jost*', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+section {
     margin: 50px 0;
 }
 
-#aboutdmcyber{
-  padding: 100px 0;
+#aboutdmcyber {
+    padding: 100px 0;
 }
 
-a{
-    text-decoration: none!important;transition: 600ms;;
-    &:hover{text-decoration: none!important;color:#02ADEF!important;transition: 600ms;background-color: #171717!important;}
+a {
+    text-decoration: none !important;
+    transition: 600ms;
 }
-.home-6{
-    margin: auto!important;
+
+a:hover {
+    text-decoration: none !important;
+    color: #02ADEF !important;
+    transition: 600ms;
+    background-color: #171717 !important;
 }
-button{
+
+.home-6 {
+    margin: auto !important;
+}
+
+button {
     transition: 600ms;
     border: 0;
 }
 
-li{
+li {
     font-size: 16px;
     padding: 2px 0;
-    font-family: 'Jost*', sans-serif;
 }
 
-label{
+label {
     color: #02ADEF;
     font-weight: bold;
     font-size: 22px;
 }
-input{
+
+input, textarea {
     width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 10%;
     border: none;
     outline: 0;
-    margin-bottom: 10px!important;
+    margin-bottom: 20px !important;
+    border-radius: 5px;
 }
 
-input::placeholder{
-    color: #171717;
-    font-size: 14px;
+input {
+    height: 60px;
+    padding-left: 10%;
 }
-textarea{
-    width: 100%;
+
+textarea {
     height: 200px;
     padding: 10%;
-    border: none;
-    outline: 0;
-    margin-bottom: 20px!important;
 }
-textarea::placeholder{
+
+input::placeholder, textarea::placeholder {
     color: #171717;
     font-size: 14px;
 }
-.cyberInputs{
+
+.cyberInputs {
     display: flex;
     justify-content: space-between;
+}
 
+.LiquidCrystal .col-md-6 {
+    padding: 0 !important;
+    height: auto !important;
 }
-.LiquidCrystal .col-md-6{
-    padding: 0!important;
-    height: auto!important;
-}
-.cyberimage{
+
+.cyberimage {
     width: 400px;
     object-fit: contain;
-    animation: beat 3s infinite alternate;  
+    animation: beat 3s infinite alternate;
 }
-.CardImage{
+
+.CardImage {
     object-fit: contain;
     width: 70px;
 }
-.CyberSolutions a{
-   display: flex;
-   justify-content: flex-end;
-   font-size: 8px;
-   letter-spacing: 12%;
-   color: #171717;
-   padding: 30px;
-}
-#aboutp{
-    padding-right: 50%!important;
-}
-// @keyframes swing {
-//     0% { transform: rotate(3deg); }
-//     100% { transform: rotate(-3deg); }
-// }
 
-.aboutcyber{
+.CyberSolutions a {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 8px;
+    letter-spacing: 12%;
+    color: #171717;
+    padding: 30px;
+}
+
+#aboutp {
+    padding-right: 50% !important;
+}
+
+.aboutcyber {
     width: 100%;
     object-fit: contain;
     position: relative;
     right: 17%;
-    // animation: swing ease-in-out 1s infinite alternate;
-    // transform-origin: center -20px;
 }
 
-
-.aboutcard{
-    // background: #5A5A5A;
-    padding:30px 15px;
+.aboutcard {
+    padding: 30px 15px;
     border-radius: 5px;
-    background: rgb(50,51,53);
     background: linear-gradient(90deg, rgba(50,51,53,1) 0%, rgba(23,23,23,1) 50%, rgba(50,51,53,1) 100%);
-
 }
-#cyberform{
+
+#cyberform {
     margin: 80px 0;
 }
 
-.cybercontact{
+.cybercontact {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     cursor: pointer;
 }
 
-
-.cybercontact img{
+.cybercontact img {
     width: 25px;
     height: 30px;
     object-fit: contain;
     margin-right: 20px;
 }
-.cybercontact1{
-    width: 80px!important;
-    height: 40px!important;
- }
-.cybercontact p{
-    padding: 0!important;
-    margin: 0!important;
+
+.cybercontact1 {
+    width: 80px !important;
+    height: 40px !important;
 }
 
-.cybercontact:hover >img{
+.cybercontact p {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.cybercontact:hover > img {
     transition: 900ms;
-    -webkit-filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(-180deg) saturate(700%) contrast(0.8);
     filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(-180deg) saturate(700%) contrast(0.8);
 }
 
-
-#contact{
+#contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    padding-left:15% ;
+    padding-left: 15%;
 }
 
-.cybersolutionimg{
+.cybersolutionimg {
     position: absolute;
-    right: -60px;
+    right: -65px;
     height: 100%;
     top: -32%;
 }
-.cybersolutionimg2{
+
+.cybersolutionimg2 {
     position: absolute;
     height: 100%;
     top: 63%;
-    right: 70%;
+    right: 85%;
 }
-.footerlogo{
+
+.footerlogo {
     width: 50%;
     object-fit: contain;
 }
-#footer{
+
+#footer {
     text-align: center;
 }
 
+/* Responsive Styles */
 
-@media (max-width: 575px) {
-    #Cyber1{
-        order:2
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 1199px) {
+    #aboutp {
+        padding-right: 20% !important;
     }
-    #Cyber2{
-        order:1
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 991px) {
+    .cyberimage {
+        width: 300px;
     }
-    section{
+    
+    li {
+        font-size: 14px;
+    }
+    
+    #aboutp {
+        padding-right: 10% !important;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 767px) {
+    section {
         margin: 30px 0;
     }
-    #aboutdmcyber{
-        padding: 20px 0;
-      }
-      #aboutp{
-        padding-right: 0%!important;
+    
+    #aboutdmcyber {
+        padding: 50px 0;
     }
-    #cybercards{
+    
+    #aboutp {
+        padding-right: 0 !important;
+    }
+    
+    #cybercards {
         margin: 15px 0;
     }
-    #cyberform{
+    
+    #cyberform {
         margin: 30px 0;
     }
-    .cyberInputs{
-        flex-direction: column;    
+    
+    .cyberInputs {
+        flex-direction: column;
     }
-    label{
+    
+    label {
         font-size: 20px;
     }
-    #contact{
-        padding-left:5% ;
+    
+    #contact {
+        padding-left: 5%;
     }
-    .cybersolutionimg{
+    
+    .cybersolutionimg, .cybersolutionimg2 {
         display: none;
     }
-    .cybercontact1{
-        width: 100%!important;
-     }
-     .footerlogo{
-        width: 100%;
-        margin-top: 50px;
+    
+    .footerlogo {
+        width: 75%;
+        margin-top: 30px;
     }
     .Cyberimage{
         width: 100%;
     }
 }
 
-
-// Small devices (landscape phones, 576px and up 767)
-@media (min-width: 568px) and (max-width: 767px) {
-    section{
-        margin: 10px 0;
+/* Extra small devices (phones, 575px and down) */
+@media (max-width: 575px) {
+    #Cyber1 {
+        order: 2;
     }
     
-}
-
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) and (max-width: 991px) {
-    #aboutp{
-        padding-right: 20%!important;
+    #Cyber2 {
+        order: 1;
     }
-    .cyberimage{
-        width: 300px;
+    
+    .cybercontact1 {
+        width: 100% !important;
     }
-    li{
-        font-size: 10px;
+    
+    .footerlogo {
+        width: 100%;
+        margin-top: 50px;
     }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) and (max-width: 1199px) {
-    #aboutp{
-        padding-right: 20%!important;
+    
+    .cyberimage {
+        width: 100%;
     }
 }
 
-
-// @keyframes beat{
-// 	10% { transform: scale(1.1); }
+// @keyframes beat {
+//     to {
+//         transform: scale(1.1);
+//     }
 // }

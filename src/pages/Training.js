@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef } from 'react'
 // import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Container, Row, Col,} from "react-bootstrap"
@@ -172,6 +172,18 @@ function Training() {
   const containerRef = useRef();
 
   useGSAP(() => {
+    gsap.from(".home-1",{
+      y:-100,
+      opacity:0,
+      duration:0.7,
+      
+    })
+    gsap.from(".home-2",{
+      y:-100,
+      opacity:0,
+      delay:0.4,
+      
+    })
 
     const sections = [
       "#Cyber1", "#Cyber2", 

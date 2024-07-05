@@ -55,18 +55,30 @@ padding-right: 50px;
 const Navbar = () => {
     const [show, setShow] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
-  
+    // const [sidebar, setSidebar] = useState(false);
+
     const controlNavbar = () => {
-      if (typeof window !== 'undefined') { 
-        if (window.scrollY > lastScrollY) { // if scroll down hide the navbar
-          setShow(false); 
-        } else { // if scroll up show the navbar
-          setShow(true);  
+        if (typeof window !== 'undefined') {
+            const currentScrollY = window.scrollY;
+            const viewportHeight = window.innerHeight;
+
+            if (currentScrollY > viewportHeight) {
+                // If we've scrolled past 100vh
+                if (currentScrollY > lastScrollY) {
+                    // Scrolling down
+                    setShow(false);
+                } else {
+                    // Scrolling up
+                    setShow(true);
+                }
+            } else {
+                // Always show navbar when above 100vh
+                setShow(true);
+            }
+
+            // Remember current scroll position
+            setLastScrollY(currentScrollY);
         }
-  
-        // remember current page location to use in the next move
-        setLastScrollY(window.scrollY); 
-      }
     };
   
     useEffect(() => {
@@ -94,7 +106,7 @@ const showSidebar = () => setSidebar(!sidebar)
                   <img src={Logo} alt="Liquid Crystal" className="cyberimagelogo" />
                 </a>
                
-            {/* <img src="../images/Vector.png" alt="cyber solutions" className='cyberimagevector'/> */}
+            {/* <img src="../images/Vector.png" alt="cyber solutions" className='cyberimagevector' /> */}
 
             <NavItems>
                 {NavbarData.map((item, i) =>{

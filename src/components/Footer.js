@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef} from 'react'
 import styled from 'styled-components';
 import { Container, Row, Col,} from "react-bootstrap"
 import '../pages/Home.scss'
@@ -173,7 +173,7 @@ function Home8(){
           </CyberInputstext>
           <CyberLinkbutton type="submit">Send</CyberLinkbutton>
           </form>
-          <img src="../images/Group6.png" alt="cyber solutions" className='cybersolutionimg2' />
+          <img src="../images/Vector1.png" alt="cyber solutions" className='cybersolutionimg2' />
       </section>
   </Col>
   
@@ -238,6 +238,8 @@ function Home8(){
   const containerRef = useRef();
 
   useGSAP(() => {
+  
+
     const sections = [".home-8", ".home-9",];
 
     sections.forEach((section, index) => {

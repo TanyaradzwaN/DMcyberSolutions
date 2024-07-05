@@ -13,10 +13,23 @@
     top: 0;
     left: 0;
     right: 0;
-    transition: 600ms;
+    transition: transform 0.9s ease-in-out, opacity 0.9s ease-in-out!important;
+  
+    // &.hidden {
+    //   transform: translateY(-100%)!important;
+    //   opacity: 0;
+    // }
+    
+    // &.active {
+    //   transform: translateY(0);
+    //   opacity: 1;
+    // }
+  
 }
 
-
+a{
+    z-index: 10;
+}
   
   .navbar.active {
     transform: translateY(0);
@@ -30,7 +43,7 @@
   
   /* Add any other styles you need for your navbar here */
 .cyberimagelogo{
-    z-index: 8;
+    z-index: 10;
     object-fit: contain;
     width: 300px;
 }
@@ -39,7 +52,7 @@
     width: 80%;
     right: 41%;
     z-index: 0;
-    top: -250%;
+    top: -130%;
     object-fit: contain;
 }
 .menu-bars {

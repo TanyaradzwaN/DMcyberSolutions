@@ -330,15 +330,16 @@ function Home() {
     
 
     gsap.from(".home-1",{
-      y:-100,
-      opacity:0,
-      duration:0.7,
+    y: -50,
+    opacity: 0,
+    duration: 0.7,
       
     })
     gsap.from(".home-2",{
-      y:-100,
-      opacity:0,
-      delay:0.4,
+      y: -50,
+      opacity: 0,
+      duration: 0.7,
+      delay: 0.4,
       
     })
 
@@ -350,14 +351,18 @@ function Home() {
     sections.forEach((section, index) => {
       gsap.from(section, {
         opacity: 0,
-        y: index % 2 === 0 ? 100 : -100,
+        y: 50, // Unified direction for simpler animation
         scrollTrigger: {
           trigger: section,
-          start: "top 80%",
-          end: "top 20%",
-          scrub: true,
+          start: "top 50%", // Start animation when the top of the section is 90% from the top of the viewport
+          end: "top 50%", // End animation when the top of the section is 60% from the top of the viewport
+          scrub: 1, // Smooth scrubbing effect
           toggleActions: "play none none reverse",
-          markers: false
+          markers: false,
+          onEnter: (self) => {
+            // Ensure the animation completes even if scrolled past quickly
+            self.animation.progress(1);
+          },
         }
       });
     });

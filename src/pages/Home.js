@@ -344,8 +344,8 @@ function Home() {
     })
 
     const sections = [
-      "#Cyber1", "#Cyber2", ".home-3", ".home-4", 
-      "#services", ".home-6", "#cybercards"
+      ".home-3", ".home-4", 
+      ".home-5", ".home-6", "#.home-7"
     ];
 
     sections.forEach((section, index) => {
